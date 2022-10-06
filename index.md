@@ -7,7 +7,7 @@ layout: default
 
 **[Biscuit](http://sblisesivdin.github.io/biscuit)** is a single-page responsive Jekyll theme. This is the most simple and still-good-looking Jekyll theme that you can find.  -->
 
-# Answer Deduction: Know When To And When Not To
+# Answer Deduction <br />  Know When To And When Not To
 
 ## Introduction
 
