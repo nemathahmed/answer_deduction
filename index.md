@@ -9,11 +9,11 @@ layout: default
 
 # Answer Deduction: Know When To And When Not To
 
-## Usage
+## Introduction
 
 There is a plethora of textual information out there and it has become very important to be able to identify what is important. To find relevant information time is spent on going through the passage and finding the answer. However, plenty of times it has been seen that extractive reading comprehension systems locate the correct answer to a question, but they also tend to make unreliable guesses on questions for which the correct answer is not stated in the context, which is far from true language understanding.
 
-## Problem Defination
+## Problem Definition
 
 Our aim here is to leverage the power of machine learning and natural language processing to create a model that deducts the answer given a passage and also identifies when a question is unanswerable. We would like to develop an ensemble model which successfully does the task and gives reliable answers for the given questions on a comprehension. Our current approach will be to take a pre-trained BERT model and then use a combination of architectures from state of the art models which are already quite accurate. 
 
