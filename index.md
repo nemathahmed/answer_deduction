@@ -7,9 +7,9 @@ layout: default
 
 **[Biscuit](http://sblisesivdin.github.io/biscuit)** is a single-page responsive Jekyll theme. This is the most simple and still-good-looking Jekyll theme that you can find.  -->
 
-# Reliable Answer Deduction <br />  Know When To And When Not To
 
-### CS7641 | Semester Project <br /> Group 33
+<h1 style="text-align: center;">Reliable Answer Deduction <br />  Know When To And When Not To</h1>
+### CS7641 | Semester Project | Group 33
 
 [<img src="https://s18955.pcdn.co/wp-content/uploads/2018/02/github.png" width="25"/>](https://github.com/user/repository/subscription)
 
