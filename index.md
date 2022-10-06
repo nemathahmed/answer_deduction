@@ -2,19 +2,26 @@
 layout: default
 ---
 
-![Banner](assets/biscuit.png)
+<!-- ![Banner](assets/biscuit.png)
 
 
-**[Biscuit](http://sblisesivdin.github.io/biscuit)** is a single-page responsive Jekyll theme. This is the most simple and still-good-looking Jekyll theme that you can find. 
+**[Biscuit](http://sblisesivdin.github.io/biscuit)** is a single-page responsive Jekyll theme. This is the most simple and still-good-looking Jekyll theme that you can find.  -->
+
+# Answer Deduction: Know When To And When Not To
 
 ## Usage
 
-You can use this theme with [Jekyll](http://jekyllrb.com/) or you can simply use it with [Github Pages](https://pages.github.com).
-For local usage just download [Jekyll](http://jekyllrb.com/), use installation guide for more. You can download latest Biscuit from [its Github repository](https://github.com/sblisesivdin/biscuit).
+There is a plethora of textual information out there and it has become very important to be able to identify what is important. To find relevant information time is spent on going through the passage and finding the answer. However, plenty of times it has been seen that extractive reading comprehension systems locate the correct answer to a question, but they also tend to make unreliable guesses on questions for which the correct answer is not stated in the context, which is far from true language understanding.
 
-If you prefer to use Github Pages, you do not need to download it, upload files to a new repository...etc., just [fork](https://docs.github.com/en/get-starter/quickstart/fork-a-repo) and use it.
+## Problem Defination
 
-### Files
+Our aim here is to leverage the power of machine learning and natural language processing to create a model that deducts the answer given a passage and also identifies when a question is unanswerable. We would like to develop an ensemble model which successfully does the task and gives reliable answers for the given questions on a comprehension. Our current approach will be to take a pre-trained BERT model and then use a combination of architectures from state of the art models which are already quite accurate. 
+
+## Datasets
+To solve this problem we plan to leverage the SQuAD2.0 dataset which provides a set of question answer pairs with over 50,000.
+
+
+<!-- ### Files
 
 * `_config.yml`            : Main configuration file.
 * `index.md`               : Website page (for now, this page).
@@ -44,3 +51,4 @@ print ("Biscuit")
 Biscuit is derived from currently deprecated theme [Solo](http://github.com/chibicode/solo). The development of Biscuit is maintained by [Sefer Bora Lisesivdin](https://lrgresearch.org/bora).
 
 Biscuit and the previous code where Biscuit is derived are distributed with [MIT license](https://github.com/sblisesivdin/biscuit/blob/gh-pages/LICENSE).
+ -->
