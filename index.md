@@ -8,7 +8,7 @@ layout: default
 **[Biscuit](http://sblisesivdin.github.io/biscuit)** is a single-page responsive Jekyll theme. This is the most simple and still-good-looking Jekyll theme that you can find.  -->
 
 
-<h1 style="text-align: center;" style="background-image: url('https://img.freepik.com/free-vector/gradient-wallpaper-background_1159-5356.jpg?size=626&ext=jpg');" >Reliable Answer Deduction <br />  Know When To And When Not To</h1>
+<h1 style="text-align: center;">Reliable Answer Deduction <br />  Know When To And When Not To</h1>
 
 <h3 style="text-align: center;">CS7641 | Semester Project | Group 33</h3>
 
