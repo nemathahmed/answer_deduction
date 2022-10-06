@@ -8,8 +8,9 @@ layout: default
 **[Biscuit](http://sblisesivdin.github.io/biscuit)** is a single-page responsive Jekyll theme. This is the most simple and still-good-looking Jekyll theme that you can find.  -->
 
 
-<h1 style="text-align: center;">Reliable Answer Deduction <br />  Know When To And When Not To</h1>
-### CS7641 | Semester Project | Group 33
+<h1 style="text-align: center;" style="background-image: url('https://img.freepik.com/free-vector/gradient-wallpaper-background_1159-5356.jpg?size=626&ext=jpg');" >Reliable Answer Deduction <br />  Know When To And When Not To</h1>
+
+<h3 style="text-align: center;">CS7641 | Semester Project | Group 33</h3>
 
 [<img src="https://s18955.pcdn.co/wp-content/uploads/2018/02/github.png" width="25"/>](https://github.com/user/repository/subscription)
 
@@ -24,6 +25,14 @@ Our aim here is to leverage the power of machine learning and natural language p
 ## Datasets
 To solve this problem we plan to leverage the SQuAD2.0 dataset which provides a set of question answer pairs with over 50,000.
 
+## Team
+
+
+* [Harsh Goyal](mailto:hgoyal34@gatech.edu)
+* [Kritika Venkatachalam](mailto:kvenkata8@gatech.edu)
+* [Nemath Ahmed](mailto:nshaik6@gatech.edu) 
+* [Pankhuri Singh](mailto:psingh374@gatech.edu)
+* [Siddharth Singh Solanki](mailto:siddharth.solanki@gatech.edu)
 
 <!-- ### Files
 
