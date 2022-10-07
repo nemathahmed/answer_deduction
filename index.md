@@ -33,6 +33,9 @@ Such a sample dataset has been shown below showcasing questions with their actua
 
 ## Sample Dataset Q&A format
 
+## Sample Model Output (Source: Dataset website):
+
+
 ## Algorithms/Methods:
 We would be using a deep learning architecture for our Machine Reading Comprehension(MRC) task. It would involve the following sections/tasks -
 Embedding module, Feature extraction, Context question interaction, verification module and answer prediction. 
