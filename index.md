@@ -33,36 +33,8 @@ Such a sample dataset has been shown below showcasing questions with their actua
 
 ## Sample Dataset Q&A format
 
-```json
- {
-    "question": "What century did the Normans first gain their separate identity?",
-    "id": "56ddde6b9a695914005b962c",
-    "answers": [{
-        "text": "10th century",
-        "answer_start": 671
-    }, {
-        "text": "the first half of the 10th century",
-        "answer_start": 649
-    }, {
-        "text": "10th",
-        "answer_start": 671
-    }, {
-        "text": "10th",
-        "answer_start": 671
-    }],
-    "is_impossible": false
-}, {
-    "plausible_answers": [{
-        "text": "Normans",
-        "answer_start": 4
-    }],
-    "question": "Who gave their name to Normandy in the 1000's and 1100's",
-    "id": "5ad39d53604f3c001a3fe8d1",
-    "answers": [],
-    "is_impossible": true
-}
-
-```
+![Sample Dataset](assets/q-a.jpeg "Sample Model Output")
+ 
 ## Sample Model Output ([Source](https://rajpurkar.github.io/SQuAD-explorer/explore/v2.0/dev/Normans.html?model=nlnet%20(single%20model)%20(Microsoft%20Research%20Asia)&version=v2.0)):
 
 ![Sample Model Output](assets/q_a.jpeg "Sample Model Output")
