@@ -63,10 +63,9 @@ Such a sample dataset has been shown below showcasing questions with their actua
 }
 
 ```
-## Sample Model Output (Source: Dataset website):
+## Sample Model Output ([Source](https://rajpurkar.github.io/SQuAD-explorer/explore/v2.0/dev/Normans.html?model=nlnet%20(single%20model)%20(Microsoft%20Research%20Asia)&version=v2.0)):
 
-![Sample Model Output](https://github.com/nemathahmed/answer_deduction/blob/gh-pages/assets/q_a.jpeg "Sample Model Output")
-![Sample Model Output]( "Sample Model Output")
+![Sample Model Output](assets/q_a.jpeg "Sample Model Output")
 
 
 
@@ -79,7 +78,7 @@ We would use contextual embeddings from BERT and then experiment with the featur
 We hope to achieve competent scores on the popularly used metrics for this task which are F1 score and EM score. These scores are already used in the SQuaD[5] to compare various models on the dataset. Additionally, if we are able to develop a competent model, we would also like to focus on keeping the model light in terms of the model size, so that it could be deployed in places where computational resources are limited.
 
 ## Gantt Chart
-![Gantt Chart](https://github.com/nemathahmed/answer_deduction/blob/gh-pages/assets/gantt.jpeg "Gantt Chart")
+![Gantt Chart](assets/gantt.jpeg "Gantt Chart")
 
 ## References:
 
