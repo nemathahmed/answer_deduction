@@ -33,7 +33,41 @@ Such a sample dataset has been shown below showcasing questions with their actua
 
 ## Sample Dataset Q&A format
 
+```json
+ {
+    "question": "What century did the Normans first gain their separate identity?",
+    "id": "56ddde6b9a695914005b962c",
+    "answers": [{
+        "text": "10th century",
+        "answer_start": 671
+    }, {
+        "text": "the first half of the 10th century",
+        "answer_start": 649
+    }, {
+        "text": "10th",
+        "answer_start": 671
+    }, {
+        "text": "10th",
+        "answer_start": 671
+    }],
+    "is_impossible": false
+}, {
+    "plausible_answers": [{
+        "text": "Normans",
+        "answer_start": 4
+    }],
+    "question": "Who gave their name to Normandy in the 1000's and 1100's",
+    "id": "5ad39d53604f3c001a3fe8d1",
+    "answers": [],
+    "is_impossible": true
+}
+
+```
 ## Sample Model Output (Source: Dataset website):
+
+![Sample Model Output](https://github.com/nemathahmed/answer_deduction/blob/gh-pages/assets/q_a.jpeg "Sample Model Output")
+![Sample Model Output]( "Sample Model Output")
+
 
 
 ## Algorithms/Methods:
@@ -43,6 +77,9 @@ We would use contextual embeddings from BERT and then experiment with the featur
 
 ## Potential results and Discussion
 We hope to achieve competent scores on the popularly used metrics for this task which are F1 score and EM score. These scores are already used in the SQuaD[5] to compare various models on the dataset. Additionally, if we are able to develop a competent model, we would also like to focus on keeping the model light in terms of the model size, so that it could be deployed in places where computational resources are limited.
+
+## Gantt Chart
+![Gantt Chart](https://github.com/nemathahmed/answer_deduction/blob/gh-pages/assets/gantt.jpeg "Gantt Chart")
 
 ## References:
 
