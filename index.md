@@ -8,8 +8,8 @@ layout: default
 **[Biscuit](http://sblisesivdin.github.io/biscuit)** is a single-page responsive Jekyll theme. This is the most simple and still-good-looking Jekyll theme that you can find.  -->
 
 
-<h1 style="text-align: center;"><Strong>Reliable Answer Deduction (RAD):</Strong></h1>
-<h3 style="text-align: center; margin-top:-0.5;">Know When To And When Not To</h3>
+<h1 style="text-align: center;"><Strong>Reliable Answer Deduction (RAD)</Strong></h1>
+<h3 style="text-align: center; margin-top:-2.5rem;">Know When To And When Not To</h3>
 
 <h3 style="text-align: center;">CS7641 | Semester Project | Group 33</h3>
 
