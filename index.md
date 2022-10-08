@@ -9,7 +9,7 @@ layout: default
 
 
 <h1 style="text-align: center;"><Strong>Reliable Answer Deduction (RAD)</Strong></h1>
-<h3 style="text-align: center; margin-top:-2.5rem;">Know When To And When Not To</h3>
+<h2 style="text-align: center; margin-top:-2.5rem;">Know When To And When Not To</h2>
 
 <h3 style="text-align: center;">CS7641 | Semester Project | Group 33</h3>
 
@@ -46,7 +46,7 @@ Such a sample dataset has been shown below showcasing questions with their actua
 ## Algorithms/Methods:
 We would be using a Deep Learning architecture for our Machine Reading Comprehension (MRC) task. It would involve the following sections/tasks -
 Embedding module, Feature extraction, Context question interaction, Verification module and answer prediction. 
-We would use contextual embeddings from BERT and then experiment with the feature extraction techniques in combination with the attentive context question interaction methods. Span Extractor has been proven to work well as an answer predictor in MRC tasks in existing literature <sup>[7]</sup>  but we would be experimenting with other methods as well. We would also be exploring unsupervised models which learn via self-supervision.
+We would use contextual embeddings from BERT and then experiment with the feature extraction techniques in combination with the attentive context question interaction methods. Span Extractor has been proven to work well as an answer predictor in MRC tasks in existing literature<sup>[7]</sup>  but we would be experimenting with other methods as well. We would also be exploring unsupervised models which learn via self-supervision.
 
 ## Potential results and Discussion
 We hope to achieve competent scores on the popularly used metrics for this task which are F1 score and EM score. These scores are already used in the SQuaD<sup>[5]</sup> to compare various models on the dataset. Additionally, if we are able to develop a competent model, we would also like to focus on keeping the model light in terms of the model size, so that it could be deployed in places where computational resources are limited.
