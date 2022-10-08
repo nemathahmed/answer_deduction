@@ -8,7 +8,7 @@ layout: default
 **[Biscuit](http://sblisesivdin.github.io/biscuit)** is a single-page responsive Jekyll theme. This is the most simple and still-good-looking Jekyll theme that you can find.  -->
 
 
-<h1 style="text-align: center;">Reliable Answer Deduction <br />  Know When To And When Not To</h1>
+<h1 style="text-align: center;"><Strong>Reliable Answer Deduction:</Strong> <br />  Know When To And When Not To</h1>
 
 <h3 style="text-align: center;">CS7641 | Semester Project | Group 33</h3>
 
@@ -16,19 +16,20 @@ layout: default
 
 ## Introduction
 
-There is a plethora of textual information out there and it has become extremely crucial to identify whether the given information is important. To find relevant information time is spent on going through the passage and finding the answer. However, plenty of times it has been seen that extractive reading comprehension systems locate the correct answer to a question, but they also tend to make unreliable guesses on questions for which the correct answer is not stated in the context, which is far from true language understanding.
+There is a plethora of textual information out there and it has become increasingly difficult to draw insights from the data and find the relevant answers to our questions. Question-answering systems like Machine Reading Comprehension (MRC) systems are effective in retrieving useful information, wherein the model retrieves the answer from given comprehensions instead of the web. A lot of attention has been given to MRC tasks lately. Although existing models achieve reasonably good results, they may still produce unreliable answers when the questions are unanswerable and are computationally heavy. Thus, our aim here is to experiment and present a model which is more reliable.
+
 
 ## Problem Definition
 
-Our aim here is to leverage the power of machine learning and natural language processing to create a model that deducts the answer when given a passage and also identifies if a question is unanswerable. We plan to develop an ensemble model which successfully accomplishes the task and gives reliable answers for the questions asked from the comprehension. Our proposed approach will be to use a combination of architectures from the state of the art models which are fairly accurate.  
+Our aim here is to leverage the power of Machine Learning and Natural Language Processing to create a model that deducts the answer when given a passage and also identifies if a question is unanswerable. We plan to develop an ensemble model which successfully accomplishes the task and gives reliable answers to the questions asked from the comprehension. Our proposed approach will be to innovate different modules in our architecture using a combination of modules by taking inspiration from state of the art architectures. 
 
 
 
 ## Dataset
-We are going to use Stanford Question Answering Dataset 2.0 ([SQuAD2.0](https://rajpurkar.github.io/SQuAD-explorer/)) combines the 100,000 questions in SQuAD1.1 with over 50,000 unanswerable questions. It was written adversarially by crowdworkers such that unanswerable questions look similar to answerable ones. To do well on SQuAD2.0, systems should answer questions when possible and also determine when no answer is supported by the paragraph and abstain from answering. 
+We are going to use Stanford Question Answering Dataset 2.0 ([SQuAD2.0](https://rajpurkar.github.io/SQuAD-explorer/))  combines the 100,000 questions in SQuAD1.1 with over 50,000 unanswerable questions. It was written adversarially by crowdworkers such that unanswerable questions look similar to answerable ones. To do well on SQuAD2.0, systems should answer questions when possible and also determine when no answer is supported by the paragraph and abstain from answering. 
 
 
-Such a sample dataset has been shown below showcasing questions with their actual or plausible answers. “is_impossible” flag has been used to distinguish between answerable and unanswerable questions and the features for the question vary accordingly. We also have a “context” feature associated with a set of questions which contains the relevant passage. 
+Such a sample dataset has been shown below showcasing questions with their actual or plausible answers. The *“is_impossible”* flag is provided to distinguish between answerable and unanswerable questions and the features for the question vary accordingly. 
 
 
 ## Sample Dataset Q&A format
@@ -42,12 +43,12 @@ Such a sample dataset has been shown below showcasing questions with their actua
 
 
 ## Algorithms/Methods:
-We would be using a deep learning architecture for our Machine Reading Comprehension(MRC) task. It would involve the following sections/tasks -
-Embedding module, Feature extraction, Context question interaction, verification module and answer prediction. 
-We would use contextual embeddings from BERT and then experiment with the feature extraction techniques in combination with the attentive context question interaction methods. Span Extractor has been proven to work well as an answer predictor in MRC tasks in existing literature[7] but we would be experimenting with other methods as well.
+We would be using a Deep Learning architecture for our Machine Reading Comprehension (MRC) task. It would involve the following sections/tasks -
+Embedding module, Feature extraction, Context question interaction, Verification module and answer prediction. 
+We would use contextual embeddings from BERT and then experiment with the feature extraction techniques in combination with the attentive context question interaction methods. Span Extractor has been proven to work well as an answer predictor in MRC tasks in existing literature [7] but we would be experimenting with other methods as well. We would also be exploring unsupervised models which learn via self-supervision.
 
 ## Potential results and Discussion
-We hope to achieve competent scores on the popularly used metrics for this task which are F1 score and EM score. These scores are already used in the SQuaD[5] to compare various models on the dataset. Additionally, if we are able to develop a competent model, we would also like to focus on keeping the model light in terms of the model size, so that it could be deployed in places where computational resources are limited.
+We hope to achieve competent scores on the popularly used metrics for this task which are F1 score and EM score. These scores are already used in the SQuaD [5] to compare various models on the dataset. Additionally, if we are able to develop a competent model, we would also like to focus on keeping the model light in terms of the model size, so that it could be deployed in places where computational resources are limited.
 
 ## Gantt Chart
 ![Gantt Chart](assets/gantt.jpeg "Gantt Chart")
@@ -59,7 +60,7 @@ We hope to achieve competent scores on the popularly used metrics for this task 
 3. [Know What You Don't Know: Unanswerable Questions for SQuAD](https://arxiv.org/abs/1806.03822) 
 4. [MobileBERT: a Compact Task-Agnostic BERT for Resource-Limited Devices](https://arxiv.org/pdf/2004.02984)
 5. [SQuAD: 100,000+ Questions for Machine Comprehension of Text](https://arxiv.org/pdf/1606.05250.pdf)
-6. [Know What You Don't Know: Unanswerable Questions for SQuAD](https://arxiv.org/abs/1806.03822) 
+6. [Bridging the Gap between Language Model and Reading Comprehension: Unsupervised MRC via Self-Supervision](https://arxiv.org/pdf/2107.08582v1.pdf)
 7. [Neural Machine Reading Comprehension: Methods and Trends](https://arxiv.org/abs/1907.01118) 
 
 
