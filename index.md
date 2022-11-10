@@ -51,6 +51,17 @@ We would use contextual embeddings from BERT and then experiment with the featur
 ## Potential results and Discussion
 We hope to achieve competent scores on the popularly used metrics for this task which are F1 score and EM score. These scores are already used in the SQuaD<sup>[5]</sup> to compare various models on the dataset. Additionally, if we are able to develop a competent model, we would also like to focus on keeping the model light in terms of the model size, so that it could be deployed in places where computational resources are limited.
 
+## Data Exploration
+![Answer](assets/Answer.png "Answer Length")
+![Question](assets/Question.png "Question Length")
+![Context](assets/Context.png "Context Length")
+![QContext](assets/Q_context.png "Context Length")
+<!-- ![Title](assets/Title.png "Context Length") -->
+
+<!-- ![Start From Fraction]('assets/Start From Fraction.png' "SF Length") -->
+
+
+
 ## Gantt Chart
 ![Gantt Chart](assets/gantt.jpeg "Gantt Chart")
 
