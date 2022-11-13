@@ -45,7 +45,7 @@ When it comes to SQUAD 2.0 dataset, we found it to be mostly reliable and clean.
 
 The training dataset of SQUAD 2.0 is unbalanced with two thirds of questions being "Answerable" and the testing dataset is highly balanced with the "Answerable" questions comprising 49.9% of the data as can be seen below.
 <!-- ![train_ques](assets/train_ques.png "Train Ques") &nbsp;&nbsp;&nbsp; ![test_ques](assets/test_ques.png "Test Ques") -->
-[<img src="https://github.com/nemathahmed/answer_deduction/blob/gh-pages/assets/train_ques.png" width="250"/>]() &nbsp;&nbsp;&nbsp; [<img src="https://github.com/nemathahmed/answer_deduction/blob/gh-pages/assets/test_ques.png" width="250"/>]()
+[<img src="assets/train_ques.png" width="250"/>]() &nbsp;&nbsp;&nbsp; [<img src="assets/test_ques.png" width="250"/>]()
 
 
 We also did an analysis to understand the distribution of questions per passage across the train and test datasets and concluded that test dataset has an average of 10 questions being asked per context passage and the distributions are shown below:
