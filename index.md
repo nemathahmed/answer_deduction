@@ -44,11 +44,13 @@ A sample of raw dataset has been shown below showcasing questions with their act
 When it comes to SQUAD 2.0 dataset, we found it to be mostly reliable and clean. However, we did do some basic cleaning exercise of removing the additional white spaces, conversion to lower case, stripping of unknown ASCII characters and tokenization as per the model requirement. Datapoints which had unreasonably small question length have been removed from both Training and Testing datasets. In order to convert the words in the passage to their root form to be in sync with the answers, we have used Lemmatization technique. Feature engineering was also done to find the end character of the answers given we have been provided with the start character.
 
 The training dataset of SQUAD 2.0 is unbalanced with two thirds of questions being "Answerable" and the testing dataset is highly balanced with the "Answerable" questions comprising 49.9% of the data as can be seen below.
-<p align="middle">
-<!-- [<img src="assets/train_ques.png" width="250"/>]() [<img src="assets/test_ques.png" width="250"/>]() -->
-<img src="assets/train_ques.png" width="250"/> 
-<img src="assets/test_ques.png" width="250"/>
- </p>
+
+<table>
+  <tr>
+    <td><img src="assets/train_ques.png" width="400"/></td>
+    <td><img src="assets/test_ques.png" width="400"/></td>
+  </tr>
+ </table>
 
 We also did an analysis to understand the distribution of questions per passage across the train and test datasets and concluded that test dataset has an average of 10 questions being asked per context passage and the distributions are shown below:
 
@@ -59,11 +61,6 @@ We also did an analysis to understand the distribution of questions per passage 
   </tr>
  </table>
 
-<p align="middle">
-<img src="assets/Ques_pp_pt_Train.png" width="400"/>
-<img src="assets/Ques_pp_pt_Test.png" width="400"/>
- </p>
-
 Next, we looked at the lengths of the context, questions and answers
 
 <table>
@@ -71,22 +68,6 @@ Next, we looked at the lengths of the context, questions and answers
     <td><img src="assets/Context.png" width="400"/></td>
     <td><img src="assets/Question.png" width="400"/></td>
    <td><img src="assets/Answer.png" width="400"/></td>
-  </tr>
- </table>
-
-
-<p align="middle">
-<!-- [<img src="assets/Ques_pp_pt_Train.png" width="300"/>]() [<img src="assets/Ques_pp_pt_Test.png" width="300"/>]() -->
-<img src="assets/Context.png" width="400"/>
-<img src="assets/Question.png" width="400"/>
-<img src="assets/Answer.png" width="400"/>
-</p>
-
-<table>
-  <tr>
-    <td><img src="assets/Context.png" width=270></td>
-    <td><img src="assets/Context.png" width=270></td>
-    <td><img src="assets/Context.png" width=270></td>
   </tr>
  </table>
 
