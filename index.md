@@ -44,10 +44,10 @@ A sample of raw dataset has been shown below showcasing questions with their act
 When it comes to SQUAD 2.0 dataset, we found it to be mostly reliable and clean. However, we did do some basic cleaning exercise of removing the additional white spaces, conversion to lower case, stripping of unknown ASCII characters and tokenization. In order to convert the words in the passage to their root form to be in sync with the answers, we have used Lemmatization technique. Feature engineering was also done to find the end character of the answers given we have been provided with the start character.
 
 The training dataset of SQUAD 2.0 is unbalanced with two thirds of questions being "Answerable" and the testing dataset is highly balanced with the "Answerable" questions comprising 49.9% of the data as can be seen below.
-![train_ques](assets/train_ques.png "Question Type in Train") &nbsp; &nbsp; &nbsp; ![test_ques](assets/test_ques.png "Question Type in Test")
+<img src = "assets/train_ques.png" width=25%> &nbsp; &nbsp; &nbsp; <img src = "assets/test_ques.png" width = 25%>
 
 We also did an analysis to understand the distribution of questions per passage across the train and test datasets and concluded that test dataset has an average of 10 questions being asked per context passage and the distributions are shown below:
-![train_ques_per_pass](assets/Ques_pp_Train.png "Question Type per passage in Train") &nbsp; &nbsp; ![test_ques_per_pass](assets/Ques_pp_Test.png "Question Type per passage in Test")
+<img src = "assets/Ques_pp_Train.png" width = 30%> &nbsp; &nbsp; <img src = "assets/Ques_pp_Test.png" width = 30%>
 
 
 ## Algorithms/Methods:
