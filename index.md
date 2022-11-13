@@ -60,10 +60,18 @@ We also did an analysis to understand the distribution of questions per passage 
 Next, we looked at the lengths of the context, questions and answers
 <p align="middle">
 <!-- [<img src="assets/Ques_pp_pt_Train.png" width="300"/>]() [<img src="assets/Ques_pp_pt_Test.png" width="300"/>]() -->
-<img src="assets/Context.png" width="100"/>
-<img src="assets/Question.png" width="100"/>
-<img src="assets/Answer.png" width="100"/>
+<img src="assets/Context.png" width="400"/>
+<img src="assets/Question.png" width="400"/>
+<img src="assets/Answer.png" width="400"/>
 </p>
+
+<table>
+  <tr>
+    <td><img src="assets/Context.png" width=270 height=480></td>
+    <td><img src="assets/Context.png" width=270 height=480></td>
+    <td><img src="assets/Context.png" width=270 height=480></td>
+  </tr>
+ </table>
 
 <p float="left" align="middle">
  <img src="https://cdn.openai.com/embeddings/draft-20220124e/vectors-1.svg" width="700"/>
