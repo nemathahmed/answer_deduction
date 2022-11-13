@@ -53,10 +53,17 @@ The training dataset of SQUAD 2.0 is unbalanced with two thirds of questions bei
 We also did an analysis to understand the distribution of questions per passage across the train and test datasets and concluded that test dataset has an average of 10 questions being asked per context passage and the distributions are shown below:
 <p align="middle">
 <!-- [<img src="assets/Ques_pp_pt_Train.png" width="300"/>]() [<img src="assets/Ques_pp_pt_Test.png" width="300"/>]() -->
-<img src="assets/Ques_pp_pt_Train.png" width="300"/>
-<img src="assets/Ques_pp_pt_Test.png" width="300"/>
+<img src="assets/Ques_pp_pt_Train.png" width="400"/>
+<img src="assets/Ques_pp_pt_Test.png" width="400"/>
  </p>
 
+Next, we looked at the lengths of the context, questions and answers
+<p align="middle">
+<!-- [<img src="assets/Ques_pp_pt_Train.png" width="300"/>]() [<img src="assets/Ques_pp_pt_Test.png" width="300"/>]() -->
+<img src="assets/Context.png" width="400"/>
+<img src="assets/Question.png" width="400"/>
+<img src="assets/Answer.png" width="400"/>
+</p>
 
 
 
