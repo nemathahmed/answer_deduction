@@ -45,12 +45,10 @@ When it comes to SQUAD 2.0 dataset, we found it to be mostly reliable and clean.
 
 The training dataset of SQUAD 2.0 is unbalanced with two thirds of questions being "Answerable" and the testing dataset is highly balanced with the "Answerable" questions comprising 49.9% of the data as can be seen below.
 <!-- ![train_ques](assets/train_ques.png "Train Ques") &nbsp;&nbsp;&nbsp; ![test_ques](assets/test_ques.png "Test Ques") -->
-[<img src="assets/train_ques.png" width="250"/>]() &nbsp;&nbsp;&nbsp; [<img src="assets/test_ques.png" width="250"/>]()
-
+[<img src="assets/train_ques.png" width="250"/>]() [<img src="assets/test_ques.png" width="250"/>]()
 
 We also did an analysis to understand the distribution of questions per passage across the train and test datasets and concluded that test dataset has an average of 10 questions being asked per context passage and the distributions are shown below:
-[<img src = "assets/Ques_pp_Train.png" width = 30%/>](https://github.com/nemathahmed/answer_deduction/blob/gh-pages/assets/Ques_pp_Train.png) &nbsp; &nbsp; [<img src = "assets/Ques_pp_Test.png" width = 30%/>](https://github.com/nemathahmed/answer_deduction/blob/gh-pages/assets/Ques_pp_Test.png)
-
+[<img src="assets/Ques_pp_Train.png" width="250"/>]() [<img src="assets/Ques_pp_Test.png" width="250"/>]()
 
 ## Algorithms/Methods:
 We would be using a Deep Learning architecture for our Machine Reading Comprehension (MRC) task. It would involve the following sections/tasks -
