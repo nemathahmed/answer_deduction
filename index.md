@@ -65,6 +65,9 @@ Next, we looked at the lengths of the context, questions and answers
 <img src="assets/Answer.png" width="400"/>
 </p>
 
+<p float="left" align="middle">
+ <img src="https://cdn.openai.com/embeddings/draft-20220124e/vectors-1.svg" width="700"/>
+</p>
 
 
 
