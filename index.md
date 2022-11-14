@@ -100,9 +100,9 @@ We would be using a Deep Learning architecture for our Machine Reading Comprehen
 Embedding module, Feature extraction, Context question interaction, Verification module and answer prediction. 
 We would use contextual embeddings from BERT and then experiment with the feature extraction techniques in combination with the attentive context question interaction methods. Span Extractor has been proven to work well as an answer predictor in MRC tasks in existing literature<sup>[7]</sup>  but we would be experimenting with other methods as well. We would also be exploring unsupervised models which learn via self-supervision.
 
-# Supervised Learning
+## Supervised Learning
 
-## Bi-Directional Attention Flow (BiDAF) model: 
+### Bi-Directional Attention Flow (BiDAF) model: 
 	
 Bi-Directional Attention Flow (BiDAF) is a multistage network which uses bi directional attention flow mechanism to model a query-aware context representation. We use this architecture for our question answering task due it’s effective attention computation at every time step which reduces information loss. Additionally, since the attention computed at every time step is a function of the context paragraph and the question at the current time step, it allows the model to have a memory-less attention mechanism which enables the model to learn the interaction between the given context and the question.
 
@@ -119,7 +119,7 @@ Bi-Directional Attention Flow (BiDAF) is a multistage network which uses bi dire
  </table>
  
 
-## Analysis of fine tuning:
+### Analysis of fine tuning:
 The training is highly sensitive to the following parameters:
 * Batch size,
 * Learning rate 
