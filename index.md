@@ -91,6 +91,14 @@ We would use contextual embeddings from BERT and then experiment with the featur
 	
 Bi-Directional Attention Flow (BiDAF) is a multistage network which uses bi directional attention flow mechanism to model a query-aware context representation. We use this architecture for our question answering task due it’s effective attention computation at every time step which reduces information loss. Additionally, since the attention computed at every time step is a function of the context paragraph and the question at the current time step, it allows the model to have a memory-less attention mechanism which enables the model to learn the interaction between the given context and the question.
 
+The BiDAF architecture details can be found here [Source<sup>[8]</sup>]:
+<table>
+  <tr>
+    <td><img src="Arch.jpeg" width="400"/></td>
+  </tr>
+ </table>
+ 
+ 
 Below are the results and training details for our preliminary fine tuning:
 <table>
   <tr align="middle">
@@ -159,6 +167,7 @@ We hope to achieve competent scores on the popularly used metrics for this task 
 5. [SQuAD: 100,000+ Questions for Machine Comprehension of Text](https://arxiv.org/pdf/1606.05250.pdf)
 6. [Bridging the Gap between Language Model and Reading Comprehension: Unsupervised MRC via Self-Supervision](https://arxiv.org/pdf/2107.08582v1.pdf)
 7. [Neural Machine Reading Comprehension: Methods and Trends](https://arxiv.org/abs/1907.01118) 
+8. [BI-DIRECTIONAL ATTENTION FLOW FOR MACHINE COMPREHENSION](https://arxiv.org/pdf/1611.01603.pdf)
 
 
 ## Team
