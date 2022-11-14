@@ -94,7 +94,7 @@ Bi-Directional Attention Flow (BiDAF) is a multistage network which uses bi dire
 The BiDAF architecture details can be found here [Source<sup>[8]</sup>]:
 <table>
   <tr>
-    <td><img src="Arch.jpeg" width="400"/></td>
+    <td><img src="assets/Arch.jpeg" width="400"/></td>
   </tr>
  </table>
  
