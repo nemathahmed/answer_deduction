@@ -73,9 +73,9 @@ Next, we looked at the lengths of the context, questions and answers
 
 
 <table>
-  <tr>
-    <td>Train NLL</td>
-    <td>Validation NLL</td>
+  <tr align="middle">
+    <td>Train/NLL</td>
+    <td>Dev/NLL</td>
   </tr>
   <tr>
     <td><img src="assets/train_NLL (1).svg" width="400"/></td>
