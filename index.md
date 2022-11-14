@@ -287,7 +287,13 @@ The calculations above are optimally computed using a few experiments until now 
 ## Further Steps
 We would further tune the BiDAF model experimenting with more combinations of hyperparameters. Going ahead we would be experimenting with relevant BERT based models for the QA task and performing comparative studies for the fine tuned models.
 
-
+## Progress Status
+<table>
+  <tr>
+    <td><img src="assets/xyz.jpeg" width="400"/></td>
+  </tr>
+ </table>
+ 
 
 
 
