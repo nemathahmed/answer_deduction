@@ -85,7 +85,20 @@ Next, we looked at the lengths of the context, questions and answers
 </p>
 
 
-
+<table>
+  <tr>
+    <td>F1 Score</td>
+    <td>54.91</td>
+  </tr>
+  <tr>
+    <td>EM Score</td>
+    <td>51.79</td>
+  </tr>
+  <tr>
+    <td>AnVA Score</td>
+    <td>62.04</td>
+  </tr>
+ </table>
 
 ## Algorithms/Methods:
 We would be using a Deep Learning architecture for our Machine Reading Comprehension (MRC) task. It would involve the following sections/tasks -
