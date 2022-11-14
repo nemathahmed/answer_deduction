@@ -39,6 +39,33 @@ A sample of raw dataset has been shown below showcasing questions with their act
 
 ![Sample Model Output](assets/q_a.jpeg "Sample Model Output")
 
+
+
+## Algorithms/Methods:
+We would be using a Deep Learning architecture for our Machine Reading Comprehension (MRC) task. It would involve the following sections/tasks -
+Embedding module, Feature extraction, Context question interaction, Verification module and answer prediction. 
+We would use contextual embeddings from BERT and then experiment with the feature extraction techniques in combination with the attentive context question interaction methods. Span Extractor has been proven to work well as an answer predictor in MRC tasks in existing literature<sup>[7]</sup>  but we would be experimenting with other methods as well. We would also be exploring unsupervised models which learn via self-supervision.
+
+
+## Potential results and Discussion
+We hope to achieve competent scores on the popularly used metrics for this task which are F1 score and EM score. These scores are already used in the SQuaD<sup>[5]</sup> to compare various models on the dataset. Additionally, if we are able to develop a competent model, we would also like to focus on keeping the model light in terms of the model size, so that it could be deployed in places where computational resources are limited.
+
+## Data Exploration
+![Answer](assets/Answer.png "Answer Length")
+![Question](assets/Question.png "Question Length")
+![Context](assets/Context.png "Context Length")
+![QContext](assets/Q_context.png "Context Length")
+<!-- ![Title](assets/Title.png "Context Length") -->
+
+<!-- ![Start From Fraction]('assets/Start From Fraction.png' "SF Length") -->
+
+
+
+## Gantt Chart
+![Gantt Chart](assets/gantt.jpeg "Gantt Chart")
+
+# Midterm
+
 ### Dataset Preprocessing & Exploration
 
 When it comes to SQUAD 2.0 dataset, we found it to be mostly reliable and clean. However, we did do some basic cleaning exercise of removing the additional white spaces, conversion to lower case, stripping of unknown ASCII characters and tokenization as per the model requirement. Datapoints which had unreasonably small question length have been removed from both Training and Testing datasets. In order to convert the words in the passage to their root form to be in sync with the answers, we have used Lemmatization technique. Feature engineering was also done to find the end character of the answers given we have been provided with the start character.
@@ -78,12 +105,6 @@ Next, we looked at the lengths of the context, questions and answers
 <p float="left" align="middle">
  <img src="https://cdn.openai.com/embeddings/draft-20220124e/vectors-1.svg" width="700"/>
 </p>
-
-
-## Algorithms/Methods:
-We would be using a Deep Learning architecture for our Machine Reading Comprehension (MRC) task. It would involve the following sections/tasks -
-Embedding module, Feature extraction, Context question interaction, Verification module and answer prediction. 
-We would use contextual embeddings from BERT and then experiment with the feature extraction techniques in combination with the attentive context question interaction methods. Span Extractor has been proven to work well as an answer predictor in MRC tasks in existing literature<sup>[7]</sup>  but we would be experimenting with other methods as well. We would also be exploring unsupervised models which learn via self-supervision.
 
 ## Supervised Learning
 
@@ -141,22 +162,6 @@ The calculations above are optimally computed using a few experiments until now 
 We would further tune the BiDAF model experimenting with more combinations of hyperparameters. Going ahead we would be experimenting with relevant BERT based models for the QA task and performing comparative studies for the fine tuned models.
 
 
-## Potential results and Discussion
-We hope to achieve competent scores on the popularly used metrics for this task which are F1 score and EM score. These scores are already used in the SQuaD<sup>[5]</sup> to compare various models on the dataset. Additionally, if we are able to develop a competent model, we would also like to focus on keeping the model light in terms of the model size, so that it could be deployed in places where computational resources are limited.
-
-## Data Exploration
-![Answer](assets/Answer.png "Answer Length")
-![Question](assets/Question.png "Question Length")
-![Context](assets/Context.png "Context Length")
-![QContext](assets/Q_context.png "Context Length")
-<!-- ![Title](assets/Title.png "Context Length") -->
-
-<!-- ![Start From Fraction]('assets/Start From Fraction.png' "SF Length") -->
-
-
-
-## Gantt Chart
-![Gantt Chart](assets/gantt.jpeg "Gantt Chart")
 
 ## References:
 
