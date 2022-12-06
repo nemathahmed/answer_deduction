@@ -316,24 +316,19 @@ The training on the Squad2.0 dataset is highly sensitive to the following parame
 
 We fine tuned our model with couple of parameters:
 
-Case1: Batch_size = 8, Learning_rate = 2e-5 and Number of epochs = 3
+Case1: Batch_size = 8, Learning_rate = 5e-5 and Number of epochs = 3
 <p float="left" align="middle">
- <img src="assets/xx.jpeg" width="700"/>
+ <img src="assets/Bert1.jpeg" width="700"/>
 </p>
 
 Case2: Batch_size = 16, Learning_rate = 5e-5 and Number of epochs = 3
 <p float="left" align="middle">
- <img src="assets/xx.jpeg" width="700"/>
+ <img src="assets/Bert2.jpeg" width="700"/>
 </p>
 
-Case3: Batch_size = 16, Learning_rate = 5e-5 and Number of epochs = 3
+Case3: Batch_size = 16, Learning_rate = 1e-6 and Number of epochs = 4 and Using LR Sceduler for Learning rate decay
 <p float="left" align="middle">
- <img src="assets/xx.jpeg" width="700"/>
-</p>
-
-Case4: Batch_size = 16, Learning_rate = 1e-6 and Number of epochs = 4 and Using LR Sceduler for Learning rate decay
-<p float="left" align="middle">
- <img src="assets/xx.jpeg" width="700"/>
+ <img src="assets/Bert4.jpeg" width="700"/>
 </p>
  
 The calculations above are optimally computed using a few experiments until now but these are subject to change once we experiment with the parameters exhaustively. The model is still low relative to its potential on F1 and EM scores of BiDAF models tuned on this dataset. An interesting point to note is that the model has performed relatively better on AvNA metric which basically measures the classification accuracy of the model when only considering its answer (any span predicted) vs. no-answer predictions. This is due to the architecture of BiDAF which allows it to compare the predicted answer versus the no answer hypothesis effectively. One major challenge that we have faced is the limited availability of computing resources. Training process took a lot of time computationally and made effective testing with more combinations of hyperparameter tuning completely infeasible. We have tried reducing the training dataset points to deal with the issue, but it leads to higher loss on dev validation sets as well. We are yet to reach an estimate for the optimal point of this tradeoff.
