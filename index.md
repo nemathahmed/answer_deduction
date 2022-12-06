@@ -294,6 +294,69 @@ The plots above are for batch size = 64, learning rate =  0.5 and max answer len
 
 The calculations above are optimally computed using a few experiments until now but these are subject to change once we experiment with the parameters exhaustively. The model is still low relative to its potential on F1 and EM scores of BiDAF models tuned on this dataset. An interesting point to note is that the model has performed relatively better on AvNA metric which basically measures the classification accuracy of the model when only considering its answer (any span predicted) vs. no-answer predictions. This is due to the architecture of BiDAF which allows it to compare the predicted answer versus the no answer hypothesis effectively. One major challenge that we have faced is the limited availability of computing resources. Training process took a lot of time computationally and made effective testing with more combinations of hyperparameter tuning completely infeasible. We have tried reducing the training dataset points to deal with the issue, but it leads to higher loss on dev validation sets as well. We are yet to reach an estimate for the optimal point of this tradeoff.
 
+
+
+
+### Fine-Tuning Bert:
+
+#### Introduction
+	
+We built a BERT-based model which returns an answer for a given question and a passage, which will also include the answer of the question. We start with the pretrained BERT-base model "bert-base-uncased" and fine-tuned it multiple times by varying paramters such as number of epochs, learning rate and batch size for the Data Locader.
+
+
+#### Feature Extraction
+
+From the dataset, we consider all context and question pairs as different data samples. In order to extract the features for each sample we perform the following additional steps. First, we tokenize the context and retrieve span (start and end indices) of the word token in the context. Similarly, for all answers given we calculate the end character index and answer spans in the context tokens. For unanswerable questions, the start and end indices are set as -1. Finally, to feed into the model we have the following features: embedding indices of context tokens, embedding indices of all characters in the context tokens, embedding indices of question tokens, embedding indices of all characters in the question tokens, answers start spans’ and answer end spans’. We use pretrained GloVe embeddings to get the corresponding word vectors.
+ 
+#### Analysis of fine tuning:
+The training on the Squad2.0 dataset is highly sensitive to the following parameters:
+* Number of Epochs
+* Batch size
+* Learning rate 
+
+We fine tuned our model with couple of parameters:
+
+Case1: Batch_size = 8, Learning_rate = 2e-5 and Number of epochs = 3
+<p float="left" align="middle">
+ <img src="assets/xx.jpeg" width="700"/>
+</p>
+
+Case2: Batch_size = 16, Learning_rate = 5e-5 and Number of epochs = 3
+<p float="left" align="middle">
+ <img src="assets/xx.jpeg" width="700"/>
+</p>
+
+Case3: Batch_size = 16, Learning_rate = 5e-5 and Number of epochs = 3
+<p float="left" align="middle">
+ <img src="assets/xx.jpeg" width="700"/>
+</p>
+
+Case4: Batch_size = 16, Learning_rate = 1e-6 and Number of epochs = 4 and Using LR Sceduler for Learning rate decay
+<p float="left" align="middle">
+ <img src="assets/xx.jpeg" width="700"/>
+</p>
+ 
+The calculations above are optimally computed using a few experiments until now but these are subject to change once we experiment with the parameters exhaustively. The model is still low relative to its potential on F1 and EM scores of BiDAF models tuned on this dataset. An interesting point to note is that the model has performed relatively better on AvNA metric which basically measures the classification accuracy of the model when only considering its answer (any span predicted) vs. no-answer predictions. This is due to the architecture of BiDAF which allows it to compare the predicted answer versus the no answer hypothesis effectively. One major challenge that we have faced is the limited availability of computing resources. Training process took a lot of time computationally and made effective testing with more combinations of hyperparameter tuning completely infeasible. We have tried reducing the training dataset points to deal with the issue, but it leads to higher loss on dev validation sets as well. We are yet to reach an estimate for the optimal point of this tradeoff.
+
+#### Results
+
+Scores for the Various fine tuned models:
+<table align="middle">
+  <tr>
+    <td>F1 Score</td>
+    <td>54.91</td>
+  </tr>
+  <tr>
+    <td>EM Score</td>
+    <td>51.79</td>
+  </tr>
+  <tr>
+    <td>AvNA Score</td>
+    <td>62.04</td>
+  </tr>
+ </table>
+ 
+
 ## Further Steps
 We would further tune the BiDAF model experimenting with more combinations of hyperparameters. Going ahead we would be experimenting with relevant BERT based models for the QA task and performing comparative studies for the fine tuned models.
 
