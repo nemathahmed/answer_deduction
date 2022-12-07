@@ -13,7 +13,7 @@ layout: default
 
 <h3 style="text-align: center;">CS7641 | Semester Project | Group 33</h3>
 
-[<img src="https://s18955.pcdn.co/wp-content/uploads/2018/02/github.png" width="25"/>](https://github.com/user/repository/subscription)
+[<img src="https://s18955.pcdn.co/wp-content/uploads/2018/02/github.png" width="25"/>](https://github.com/nemathahmed/CS7641)
 
 ## Introduction
 
@@ -397,8 +397,11 @@ A Lite BERT (ALBERT) for self - supervised learning of language representations 
 - **Inter-sentence coherence loss** - ALBERT uses a sentence-order prediction (SOP) loss which focuses on modeling inter-sentence coherence. Thus, avoids topic prediction. The SOP loss uses two consecutive segments from the same document.  For positive examples, these segments are taken in the same order and for negative examples their order is swapped. This enables the model to learn fine-grained differences.
 
 These changes enable ALBERT models to have significantly smaller parameter size as compared to the BERT models.
+For all the hyperparameter values that we could experiment with, we observed that the model started overfitting from the first few epochs itself. Below are the Eval results for the hyperparameter values of batch size = 8, learning rate =  3e-5, num_epochs = 3
 
-
+<p float="left" align="middle">
+ <img src="assets/Albert-Test-Train.png" width="700"/>
+</p>
 
 
 ## Unsupervised Learning
@@ -527,6 +530,111 @@ Top p filtering - The model will sort the word probabilities in descending order
 most relevant word probabilities, but does not only keep the best one, as more than one word can be appropriate given a sequence.
 
 
+## Qualitative Comparative Analysis 
+
+### Representative Example Prediction for all the explored hyper parameters
+<table>
+	<tr>
+		<td>CONTEXT: M. Mahdi Roozbahani is a lecturer in the School of Computational Science and Engineering at Georgia Tech. Roozbahani is also the founder of Filio, a centralized cloud-based platform for efficient organization of site photos using mobile- and web-app, which was initiated through Create-X incubator program.
+Roozbahani received his Ph.D in Computational Science and Engineering in 2019 under the supervision of Prof. David Frost at Georgia Tech. His research interests include topics such as modeling and simulation, network analysis and machine learning. He has earned three master’s degrees in Computational Science and Engineering from Georgia Tech, in Civil and Environmental Engineering from Georgia Tech, and in Geotechnical Engineering from University Putra Malaysia. Mahdi earned his bachelor’s degree from Iran University of Science and Technology where he received the award for the best final year bachelor project among all undergraduate students. He is a recipient of the Jean-Lou Chameau Research Excellence award, best Graduate Research Poster award in Geosystem poster symposium, outstanding research poster and outstanding volunteer award at CBBG center. He was awarded the NSF IRES fellowship global internship program at Ecole des Ponts in Paris. One of his papers was selected as the top five featured papers and issue cover in Materials journal in 2017. He has published over 10 journal and conference papers.</td>
+	</tr>
+</table>
+
+
+<table>
+	<tr>
+		<td> Question </td>
+		<td>Albert v2</td>
+		<td>GPT3 (w/o word limit)</td>
+		<td>BiDAF</td>
+		<td>BERT QA</td>
+	</tr>
+	<tr>
+		<td>Who is Michael Jackson?</td>
+		<td>a lecturer in the School of Computational Science and Engineering at Georgia Tech.</td>
+		<td>Michael Jackson is not mentioned in the paragraph</td>
+		<td>Mahdi Roozbahani</td>
+		<td>Not answerable</td>
+	</tr>
+	<tr>
+		<td>Where did Mahdi get his Bachelor’s degree ?</td>
+		<td>Iran University of Science and Technology</td>
+		<td>Mahdi earned his bachelor's degree from Iran University of Science and Technology.</td>
+		<td>Iran University of Science and Technology</td>
+		<td>Iran University of Science and Technology</td>
+	</tr>
+	<tr>
+		<td>What is the area of Mahdi’s PhD?</td>
+		<td>modeling and simulation, network analysis and machine learning.</td>
+		<td>Mahdi's PhD is in Computational Science and Engineering.</td>
+		<td>Georgia Tech</td>
+		<td>Computational Science and Engineering</td>
+	</tr>
+	<tr>
+		<td>How many papers has he published?</td>
+		<td>over 10</td>
+		<td>He has published over 10 journal and conference papers.(with word limit imposed) 10 papers</td>
+		<td>over 10</td>
+		<td>over 10</td>
+	</tr>
+	<tr>
+		<td>Is Mahdi Really cool?</td>
+		<td>M. Mahdi Roozbahani</td>
+		<td>Yes he is</td>
+		<td>Mahdi earned his bachelor’s degree.</td>
+		<td>Not answerable</td>
+	</tr>
+	<tr>
+		<td>Which awards has Mahdi received</td>
+		<td>Jean-Lou Chameau Research Excellence award,</td>
+		<td>Mahdi has received the Jean-Lou Chameau Research Excellence award, best Graduate Research Poster award in Geosystem poster symposium, outstanding research poster and outstanding volunteer award at CBBG center, and the NSF IRES fellowship global internship program at Ecole des Ponts in Paris.</td>
+		<td>best final year bachelor project</td>
+		<td>Jean-Lou Chameau Research Excellence award</td>
+	</tr>
+	<tr>
+		<td>Does Mahdi teach Machine Learning at Georgia tech ?</td>
+		<td>lecturer in the School of Computational Science and Engineering</td>
+		<td>Yes, Mahdi teaches Machine Learning at Georgia Tech as it is one of his research interests.</td>
+		<td>School of Computational Science and Engineering at Georgia Tech.</td>
+		<td>lecturer</td>
+	</tr>
+</table>
+
+All the models we explored seem to do well when the question asked can be easily inferred from the paragraph i.e. the question contains keywords that are exactly present in the answer. However an interesting point to note, which was observed earlier also, is that GPT-III seems to be adding extra contextualizers according to the question asked. This leads to its answers being different from the other models which makes it hard to compare to our models quantitatively. Thus we explicitly specify a limit in the prompt used for quantitative comparisons. Another point to be noted is that the trained models seem to refrain from anything extra or contextual to the answer since the models have been penalized for giving answers other than ground truth of SQuaD; in which the answers are always to the point and not contextualized according to the question. 
+ 
+One of the main objectives of this project was to train models which can reliably declare that no answer is possible based on the given context. In the not answerable questions one category of questions are the ones which clearly cannot be answered. In such questions GPT-III and BERT QA seem to be performing better  as is indicative in the question “Who is Michael Jackson” in the example above. BiDAF and AlBERT consistently perform worse in the cases where the questions cannot be answered based on the context. A nuanced subcategory in the questions which contains the same keyword as the context but are still unanswerable and thus quite confusing for the models. In the above table the question “Does Mahdi teach Machine Learning at Georgia tech ?” All the models get confused and give answers where they were not supposed to. GPT-III in particular sometimes gives speculative answers in such cases as is evident in the answer above. We observed that our models are not “truly” reliable in answer deduction but are still able to show some level of reliability in the obviously not answerable category which is still an improvement over the models which do not take the non-answerble questions into account. 
+ 
+Bonus :) (just for fun)
+In the category of questions which are ambiguous, as is represented by “Is Mahdi really cool?” The models give mixed outputs, sometimes not answerable and sometimes giving a random answer. Though the answers are quite interesting in such cases!
+While AlBERT thinks that just the name of our prof. is enough to prove his coolness, GPT-3 definitely argues that he is based on speculation. (we agree :) ). While BiDAF thinks that a Bachelor’s degree is enough a reason for him to be cool (again we agree XD) and then there is BERT QA which says lecturers are cool in general (interesting!). 
+
+## Results and Conclusion
+
+Below is our comparison of various supervised models' scores explored in this report:
+<table align="middle">
+  <tr>
+    <td>Various Models</td>
+    <td>F1 Score</td>
+    <td>EM Score</td>
+  </tr>
+  <tr>
+    <td>BERT QA</td>
+    <td>75.89</td>
+    <td>71.91</td>
+  </tr>
+  <tr>
+    <td>ALBERT</td>
+    <td>74.13</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>BiDAF</td>
+    <td>65.29</td>
+    <td>49.72</td>
+  </tr>
+ </table>
+
+Thus, we can clearly say that the BERT QA performed better compared to all the other models based on F1 and EM scores. Though we explored GPT-3 in our report, we believe it is not fair to compare it against our supervised models as it is evaluated only on a subset of our actual dataset (500 QA pairs) due to limitations of the API calls of OpenAI. 
 
 
 ## References:
@@ -586,73 +694,6 @@ Biscuit and the previous code where Biscuit is derived are distributed with [MIT
 
  
 
-### Given Context
-<table>
-	<tr>
-		<td>M. Mahdi Roozbahani is a lecturer in the School of Computational Science and Engineering at Georgia Tech. Roozbahani is also the founder of Filio, a centralized cloud-based platform for efficient organization of site photos using mobile- and web-app, which was initiated through Create-X incubator program.
-Roozbahani received his Ph.D in Computational Science and Engineering in 2019 under the supervision of Prof. David Frost at Georgia Tech. His research interests include topics such as modeling and simulation, network analysis and machine learning. He has earned three master’s degrees in Computational Science and Engineering from Georgia Tech, in Civil and Environmental Engineering from Georgia Tech, and in Geotechnical Engineering from University Putra Malaysia. Mahdi earned his bachelor’s degree from Iran University of Science and Technology where he received the award for the best final year bachelor project among all undergraduate students. He is a recipient of the Jean-Lou Chameau Research Excellence award, best Graduate Research Poster award in Geosystem poster symposium, outstanding research poster and outstanding volunteer award at CBBG center. He was awarded the NSF IRES fellowship global internship program at Ecole des Ponts in Paris. One of his papers was selected as the top five featured papers and issue cover in Materials journal in 2017. He has published over 10 journal and conference papers.</td>
-	</tr>
-</table>
-
-
-<table>
-	<tr>
-		<td> Question </td>
-		<td>**Albert v2**</td>
-		<td>GPT3 (w/o word limit)</td>
-		<td>BiDAF</td>
-		<td>BERT QA</td>
-	</tr>
-	<tr>
-		<td>Who is Michael Jackson?</td>
-		<td>a lecturer in the School of Computational Science and Engineering at Georgia Tech.</td>
-		<td>Michael Jackson is not mentioned in the paragraph</td>
-		<td>Mahdi Roozbahani</td>
-		<td>Not answerable</td>
-	</tr>
-	<tr>
-		<td>Where did Mahdi get his Bachelor’s degree ?</td>
-		<td>Iran University of Science and Technology</td>
-		<td>Mahdi earned his bachelor's degree from Iran University of Science and Technology.</td>
-		<td>Iran University of Science and Technology</td>
-		<td>Iran University of Science and Technology</td>
-	</tr>
-	<tr>
-		<td>What is the area of Mahdi’s PhD?</td>
-		<td>modeling and simulation, network analysis and machine learning.</td>
-		<td>Mahdi's PhD is in Computational Science and Engineering.</td>
-		<td>Georgia Tech</td>
-		<td>Computational Science and Engineering</td>
-	</tr>
-	<tr>
-		<td>How many papers has he published?</td>
-		<td>over 10</td>
-		<td>He has published over 10 journal and conference papers.(with word limit imposed) 10 papers</td>
-		<td>over 10</td>
-		<td>over 10</td>
-	</tr>
-	<tr>
-		<td>Is Mahdi Really cool?</td>
-		<td>M. Mahdi Roozbahani</td>
-		<td>Yes he is</td>
-		<td>Mahdi earned his bachelor’s degree.</td>
-		<td>Not answerable</td>
-	</tr>
-	<tr>
-		<td>Which awards has Mahdi received</td>
-		<td>Jean-Lou Chameau Research Excellence award,</td>
-		<td>Mahdi has received the Jean-Lou Chameau Research Excellence award, best Graduate Research Poster award in Geosystem poster symposium, outstanding research poster and outstanding volunteer award at CBBG center, and the NSF IRES fellowship global internship program at Ecole des Ponts in Paris.</td>
-		<td>best final year bachelor project</td>
-		<td>Jean-Lou Chameau Research Excellence award</td>
-	</tr>
-	<tr>
-		<td>Does Mahdi teach Machine Learning at Georgia tech ?</td>
-		<td>lecturer in the School of Computational Science and Engineering</td>
-		<td>Yes, Mahdi teaches Machine Learning at Georgia Tech as it is one of his research interests.</td>
-		<td>School of Computational Science and Engineering at Georgia Tech.</td>
-		<td>lecturer</td>
-	</tr>
-</table>
  
  
  
