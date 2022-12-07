@@ -331,7 +331,11 @@ Case3: Batch_size = 16, Learning_rate = 1e-6 and Number of epochs = 4 and Using 
  <img src="assets/Bert4.jpeg" width="700"/>
 </p>
  
-The calculations above are optimally computed using a few experiments until now but these are subject to change once we experiment with the parameters exhaustively. The model is still low relative to its potential on F1 and EM scores of BiDAF models tuned on this dataset. An interesting point to note is that the model has performed relatively better on AvNA metric which basically measures the classification accuracy of the model when only considering its answer (any span predicted) vs. no-answer predictions. This is due to the architecture of BiDAF which allows it to compare the predicted answer versus the no answer hypothesis effectively. One major challenge that we have faced is the limited availability of computing resources. Training process took a lot of time computationally and made effective testing with more combinations of hyperparameter tuning completely infeasible. We have tried reducing the training dataset points to deal with the issue, but it leads to higher loss on dev validation sets as well. We are yet to reach an estimate for the optimal point of this tradeoff.
+* Concerning the *number_of_epochs* we began with 2 and realized that overfitting happened from the very first epoch. When we tried to train the model for more number of epochs, overfitting happened after the first epoch itself and the gap between the training and validation loss was getting bigger and bigger with each epoch.
+
+* For *learning_rate*, we tried 5e-5 initially but we observed overfitting, but as clearly visible increasing the batch_size improved the performance a bit (overfitting started from later epoch). Also, by using the LR Scheduler for the learning_rate, we got much better results as clearly visible in the final grpah.
+
+* For *batch_size*, it was impossible to train the model with bigger batch size as we were running out of resources. Even Google Colab free version crashed.  Therefore, when we tried with batch_size of 16 with Google Colab Pro Premium High-ram GPUs, we saw improvements in results. 
 
 #### Results
 
