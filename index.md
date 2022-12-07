@@ -328,7 +328,7 @@ First of all, we read both training and validation datasets and proceed with the
 The training on the Squad2.0 dataset is highly sensitive to the following parameters:
 * Number of Epochs: Concerning the *number_of_epochs*, we began with 2 and realized that overfitting happened from the very first epoch. When we tried to train the model for more number of epochs, overfitting happened after the first epoch itself and the gap between the training and validation loss was getting bigger and bigger with each epoch.
 
-* Batch size: For *batch_size*, it was impossible to train the model with bigger batch size as we were running out of resources. Even Google Colab free version crashed.  Therefore, when we tried with batch_size of 16 with Google Colab Pro Premium High-ram GPUs, we saw improvements in results. 
+* Batch size: For *batch_size*, it was impossible to train the model with bigger batch size as we were running out of computation resources. Initially, Google Colab free version crashed with a batch size of 16. Therefore, we moved to Google Colab Pro Premium High-ram GPUs for training with a higher batch size and observed better results. 
 
 * Learning rate: For *learning_rate*, we tried 5e-5 initially but we observed overfitting, but increasing the batch_size improved the performance as clearly visible in the graphs shown (overfitting started from later epoch). Also, by using the LR Scheduler and much smaller learning_rate, we got better results as depicted in the final graph.
 
