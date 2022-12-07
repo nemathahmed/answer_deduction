@@ -475,6 +475,74 @@ Biscuit and the previous code where Biscuit is derived are distributed with [MIT
   </tr>
  </table>
  
+
+### Given Context
+<table>
+	<tr>
+		<td>M. Mahdi Roozbahani is a lecturer in the School of Computational Science and Engineering at Georgia Tech. Roozbahani is also the founder of Filio, a centralized cloud-based platform for efficient organization of site photos using mobile- and web-app, which was initiated through Create-X incubator program.
+Roozbahani received his Ph.D in Computational Science and Engineering in 2019 under the supervision of Prof. David Frost at Georgia Tech. His research interests include topics such as modeling and simulation, network analysis and machine learning. He has earned three master’s degrees in Computational Science and Engineering from Georgia Tech, in Civil and Environmental Engineering from Georgia Tech, and in Geotechnical Engineering from University Putra Malaysia. Mahdi earned his bachelor’s degree from Iran University of Science and Technology where he received the award for the best final year bachelor project among all undergraduate students. He is a recipient of the Jean-Lou Chameau Research Excellence award, best Graduate Research Poster award in Geosystem poster symposium, outstanding research poster and outstanding volunteer award at CBBG center. He was awarded the NSF IRES fellowship global internship program at Ecole des Ponts in Paris. One of his papers was selected as the top five featured papers and issue cover in Materials journal in 2017. He has published over 10 journal and conference papers.</td>
+	</tr>
+</table>
+
+
+<table>
+	<tr>
+		<td> Question </td>
+		<td>**Albert v2**</td>
+		<td>GPT3 (w/o word limit)</td>
+		<td>BiDAF</td>
+		<td>BERT QA</td>
+	</tr>
+	<tr>
+		<td>Who is Michael Jackson?</td>
+		<td>a lecturer in the School of Computational Science and Engineering at Georgia Tech.</td>
+		<td>Michael Jackson is not mentioned in the paragraph</td>
+		<td>Mahdi Roozbahani</td>
+		<td>Not answerable</td>
+	</tr>
+	<tr>
+		<td>Where did Mahdi get his Bachelor’s degree ?</td>
+		<td>Iran University of Science and Technology</td>
+		<td>Mahdi earned his bachelor's degree from Iran University of Science and Technology.</td>
+		<td>Iran University of Science and Technology</td>
+		<td>Iran University of Science and Technology</td>
+	</tr>
+	<tr>
+		<td>What is the area of Mahdi’s PhD?</td>
+		<td>modeling and simulation, network analysis and machine learning.</td>
+		<td>Mahdi's PhD is in Computational Science and Engineering.</td>
+		<td>Georgia Tech</td>
+		<td>Computational Science and Engineering</td>
+	</tr>
+	<tr>
+		<td>How many papers has he published?</td>
+		<td>over 10</td>
+		<td>He has published over 10 journal and conference papers.(with word limit imposed) 10 papers</td>
+		<td>over 10</td>
+		<td>over 10</td>
+	</tr>
+	<tr>
+		<td>Is Mahdi Really cool?</td>
+		<td>M. Mahdi Roozbahani</td>
+		<td>Yes he is</td>
+		<td>Mahdi earned his bachelor’s degree.</td>
+		<td>Not answerable</td>
+	</tr>
+	<tr>
+		<td>Which awards has Mahdi received</td>
+		<td>Jean-Lou Chameau Research Excellence award,</td>
+		<td>Mahdi has received the Jean-Lou Chameau Research Excellence award, best Graduate Research Poster award in Geosystem poster symposium, outstanding research poster and outstanding volunteer award at CBBG center, and the NSF IRES fellowship global internship program at Ecole des Ponts in Paris.</td>
+		<td>best final year bachelor project</td>
+		<td>Jean-Lou Chameau Research Excellence award</td>
+	</tr>
+	<tr>
+		<td>Does Mahdi teach Machine Learning at Georgia tech ?</td>
+		<td>lecturer in the School of Computational Science and Engineering</td>
+		<td>Yes, Mahdi teaches Machine Learning at Georgia Tech as it is one of his research interests.</td>
+		<td>School of Computational Science and Engineering at Georgia Tech.</td>
+		<td>lecturer</td>
+	</tr>
+</table>
  
  
  
