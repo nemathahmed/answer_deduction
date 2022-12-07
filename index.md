@@ -529,10 +529,11 @@ Temperature - It is used to scale the probabilities of a given word being genera
 Top p filtering - The model will sort the word probabilities in descending order. Then, it will sum those probabilities up to p while dropping the other words. This means the model only keeps the
 most relevant word probabilities, but does not only keep the best one, as more than one word can be appropriate given a sequence.
 
+## Results and Conclusion
 
-## Qualitative Comparative Analysis 
+### Qualitative Comparative Analysis 
 
-### Representative Example Prediction for all the explored hyper parameters
+#### Representative Example Prediction for all the explored hyper parameters
 <table>
 	<tr>
 		<td>CONTEXT: M. Mahdi Roozbahani is a lecturer in the School of Computational Science and Engineering at Georgia Tech. Roozbahani is also the founder of Filio, a centralized cloud-based platform for efficient organization of site photos using mobile- and web-app, which was initiated through Create-X incubator program.
@@ -608,7 +609,7 @@ Bonus :) (just for fun)
 In the category of questions which are ambiguous, as is represented by “Is Mahdi really cool?” The models give mixed outputs, sometimes not answerable and sometimes giving a random answer. Though the answers are quite interesting in such cases!
 While AlBERT thinks that just the name of our prof. is enough to prove his coolness, GPT-3 definitely argues that he is based on speculation. (we agree :) ). While BiDAF thinks that a Bachelor’s degree is enough a reason for him to be cool (again we agree XD) and then there is BERT QA which says lecturers are cool in general (interesting!). 
 
-## Results and Conclusion
+### Quantitative Comparison
 
 Below is our comparison of various supervised models' scores explored in this report:
 <table align="middle">
