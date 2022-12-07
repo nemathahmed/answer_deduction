@@ -378,7 +378,7 @@ As clearly visible from the above shown graphs, we got the best results with 1e-
  
 ### Fine-Tuning BiDAF:
 
-We continued our efforts with BiDAF model after the midterm report. Below are the results of the model training with the most optimal hyperparamters found after performing a couple more experiements. The plots below are for batch size = 32, learning rate =  0.3 and max answer length = 12. 
+We continued our efforts with BiDAF model after the midterm report. Below are the results of the model training with the most optimal hyperparamters found after performing a couple more experiements. The plots below are for batch size = 32, learning rate =  0.3, num_epochs = 15.
 
 <p float="left" align="middle">
  <img src="assets/Albert Losses.jpeg" width="700"/>
