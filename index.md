@@ -133,11 +133,10 @@ Under the unsupervised method using GPT-3 we analyzed the statistics on the answ
 As discussed we assign GPT-3 the task of giving answers to our questions. We do it in branches. Firstly, we don’t give GPT-3 the context to our question. We allow it to use it’s vast knowledge gained by being trained on millions of articles to answer a question. Based on the word length of answers in SQuAD we try asking GPT-3 to limit it’s answer length to avoid unnecessary information leading to score diversion.
 
 In the plot below, we see that our dataset gives much more concise answers compared to the GPT model. Also we see roughly the GPT answers are much more verbose. This comes from the fact that GPT has knowledge of things which are not necessarily in the context used in the SQuAD dataset. GPT roughly gives an answer of character length of 41 on average. 
-<table>
-  <tr>
-    <td><img src="assets/gpt_raw_ans_length (1).png" width="400"/></td>
-  </tr>
- </table>
+
+ <p float="left" align="middle">
+ <img src="assets/gpt_raw_ans_length (1).png" width="700"/>
+</p>
 
 
 Now checking the similarity between answers from GPT-3 and SQuAD dataset we get a similarity plot as shown below.
@@ -150,18 +149,16 @@ Example (No Context):
 * SQuAD Answer: In the late 1990s.
 ```
 
-<table>
-  <tr>
-    <td><img src="assets/gpt_ans_length.png" width="400"/></td>
-  </tr>
- </table>
+<p float="left" align="middle">
+ <img src="assets/gpt_ans_length.png" width="700"/>
+</p>
+
 
 Now when we give GPT the context along with the question we see interesting insights being derived. Firstly, we that the answer length now starts matching the answers from SQuAD dataset. And there is no divergence in the answer length between SQuAD and GPT-3. This is much more closer to SQuAD dataset. The average answer length is 28.0.
-<table>
-  <tr>
-    <td><img src="assets/similarity_raw.png" width="400"/></td>
-  </tr>
- </table>
+
+<p float="left" align="middle">
+ <img src="assets/similarity_raw.png" width="700"/>
+</p>
 
 As expected we also see a huge improvement in the similarity scores between GPT-3 answers and SQuAD answers. We see that many questions are now answered with 100% accuracy. The average accuracy is 86.4%. Thus providing context makes answers both concise and precise to SQuAD.
 
@@ -172,20 +169,19 @@ Example (With Context):
 * SQuAD Answer: In the late 1990s.
 ```
 
-<table>
-  <tr>
-    <td><img src="assets/similarity.png" width="400"/></td>
-  </tr>
- </table>
+
+<p float="left" align="middle">
+ <img src="assets/similarity.png" width="700"/>
+</p>
+
 
 
 We also verify the plausible answers to which SQuAD thinks it’s improbable to answer the question. From the graph below we see that when we give the context - the questions which are termed unanswerable and have a plausible answer are similar to GPT-3 predictions. On the other hand there is divergence when we don’t give the context. This is because without context GPT-3 takes in all the knowledge and answers all questions. 
 
-<table>
-  <tr>
-    <td><img src="assets/imp_similarity.png" width="400"/></td>
-  </tr>
- </table>
+<p float="left" align="middle">
+ <img src="assets/imp_similarity.png" width="700"/>
+</p>
+ 
 
 Scores for the current fine tuned model:
 <table align="middle">
@@ -310,11 +306,10 @@ As clearly visible from the above shown graphs, we got the best results with 1e-
 Bi-Directional Attention Flow (BiDAF) is a multistage network which uses bi directional attention flow mechanism to model a query-aware context representation. We use this architecture for our question answering task due it’s effective attention computation at every time step which reduces information loss. Additionally, since the attention computed at every time step is a function of the context paragraph and the question at the current time step, it allows the model to have a memory-less attention mechanism which enables the model to learn the interaction between the given context and the question.
 
 The BiDAF architecture details can be found [here](https://arxiv.org/pdf/1611.01603.pdf)<sup>[8]</sup>:
-<table>
-  <tr>
-    <td><img src="assets/Arch.jpeg" width="400"/></td>
-  </tr>
- </table>
+
+ <p float="left" align="middle">
+ <img src="assets/Arch.jpeg" width="700"/>
+</p>
  
 #### Feature Extraction
 
@@ -368,11 +363,10 @@ The calculations above are optimally computed using a few experiments until now 
 We would further tune the BiDAF model experimenting with more combinations of hyperparameters. Going ahead we would be experimenting with relevant BERT based models for the QA task and performing comparative studies for the fine tuned models.
 
 ## Progress Status
-<table>
-  <tr>
-    <td><img src="assets/xyz.jpeg" width="400"/></td>
-  </tr>
- </table>
+<p float="left" align="middle">
+ <img src="assets/xyz.jpeg" width="700"/>
+</p>
+ 
  
 
 
