@@ -615,7 +615,7 @@ Below is our comparison of various supervised models' scores explored in this re
   <tr>
     <td>ALBERT</td>
     <td>74.13</td>
-    <td>N/A</td>
+    <td>68.14</td>
   </tr>
   <tr>
     <td>BiDAF</td>
