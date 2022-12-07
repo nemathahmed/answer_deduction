@@ -345,14 +345,14 @@ We fine tuned our model with couple of parameters:
  <img src="assets/Bert2.jpeg" width="700"/>
 </p>
 
-**Case3:** Batch_size = 16, Learning_rate = 1e-6 and Number of epochs = 4 and Using LR Sceduler for Learning rate decay
+**Case3:** Batch_size = 16, Learning_rate = 1e-6 and Number of epochs = 4 and Using LR Scheduler for Learning rate decay
 <p float="left" align="middle">
  <img src="assets/Bert4.jpeg" width="700"/>
 </p>
  
 #### Results
 
-As clearly visible from the above shown graphs, we got the best results with 1e-6 learning_rate, 4 epochs, 16 batch_size and LR scheduler. The scores for the model can be found below:
+As clearly visible from the above shown graphs, we got the best results with 1e-6 learning_rate, 4 epochs, 16 batch_size and LR scheduler. The scores for various fine-tuned models can be found below:
 <table align="middle">
   <tr>
     <td>Various Models</td>
@@ -490,31 +490,26 @@ We fine tune GPT based on the following hyper parameters:
 
 <table>
   <tr>
-  
     <td>GPT Hyperparameters</td>
     <td>Scores</td>
   </tr>
   <tr>
-   
     <td>entry_count</td>
     <td>10</td>
   </tr>
   <tr>
-   
     <td>entry_length</td>
     <td>30</td>
   </tr>
   <tr>
-
     <td>top_p</td>
     <td>0.8</td>
   </tr>
   <tr>
-
     <td>temperature</td>
     <td>1</td>
   </tr>
- </table>
+</table>
  
 
 
