@@ -377,6 +377,13 @@ As clearly visible from the above shown graphs, we got the best results with 1e-
  </table>
  
 ### Fine-Tuning BiDAF: 
+<p float="left" align="middle">
+ <img src="assets/Albert Losses.jpeg" width="700"/>
+</p>
+
+<p float="left" align="middle">
+ <img src="assets/Albert scores.jpeg" width="700"/>
+</p>
 
 ### ALBERT: 
 A Lite BERT (ALBERT) for self - supervised learning of language representations is an extension of the BERT model with modifications to make it a lighter model. It employs two parameter reduction techniques which help lower the memory consumption as well as decrease the training time required. It uses a transformer encoder with GELU nonlinearities like BERT. Three significant design choices that are used in ALBERT are Factorized embedding parameterization, Cross-layer parameter sharing and Inter-sentence coherence loss. 
@@ -386,13 +393,7 @@ A Lite BERT (ALBERT) for self - supervised learning of language representations 
 
 These changes enable ALBERT models to have significantly smaller parameter size as compared to the BERT models.
 
-<p float="left" align="middle">
- <img src="assets/Albert Losses.jpeg" width="700"/>
-</p>
 
-<p float="left" align="middle">
- <img src="assets/Albert scores.jpeg" width="700"/>
-</p>
 
 
 ## Unsupervised Learning
@@ -413,7 +414,7 @@ The details of the calculation can be seen in the image below:
  <img src="assets/BLEU.png" width="700"/>
 </p>
 
-**Why BLEU is bad? **
+**Why BLEU is bad?**
 
 The BLEU metric performs badly when used to evaluate individual sentences. For example, both example sentences get very low BLEU scores even though they capture most of the meaning. Because n-gram statistics for individual sentences are less meaningful, BLEU is by design a corpus-based metric; that is, statistics are accumulated over an entire corpus when computing the score. Note that the BLEU metric defined above cannot be factorized for individual sentences.
 
