@@ -313,7 +313,7 @@ Bidirectional Encoder Representations from Transformers (BERT) employs masked la
  <img src="assets/BERT Arch.jpeg" width="700"/>
 </p>
 
-We built a BERT-based model which returns an answer for a given question and a passage, which will also include the answer of the question. We start with the pretrained BERT-base model "bert-base-uncased" and fine-tuned it multiple times by varying paramters such as number of epochs, learning rate and batch size for the Data Locader.
+We built a BERT-based model which returns an answer for a given question and a passage, which will also include the answer of the question. We start with the pretrained BERT-base model "bert-base-uncased" and fine-tuned it multiple times by varying parameters such as number of epochs, learning rate and batch size for the Data Loader.
 
 
 #### Feature Extraction
@@ -396,7 +396,7 @@ These changes enable ALBERT models to have significantly smaller parameter size 
 
 ## Unsupervised Learning
 
-### GPT-3 Output Analysis - BLEU Analysis:
+### GPT-3 Further Analysis - BLEU Analysis:
 
 BLEU - BiLingual Evaluation Understudy is a score widely used in NLP to evaluate the similarity between the sentence and the target sentences. It compares the n-gram of the predicted sentence with the n-gram of the target sentence to count the number of matches. The match check is independent of the positions where they occur and more the number of matches, the better the machine translation. A score of 1 indicates a perfect match while a score of 0 indicates a complete mismatch. The calculation of BLEU comprises of 2 main parts:
 - **N-Gram Overlap:** 
@@ -456,7 +456,7 @@ On evaluation for BLEU scores based on n-grams, we see that the trend is similar
  </table>
  
  
-**The problem of answer length:** One problem that we encounter while using GPT is the length of answer it outputs. This can also be seen in our example prompt towards the end of the page. We see that GPT inherently answers comprehensively to each question. However, the dataset, SQuAD has answers which are lesser in length. Thus to make a fair comparison we need to limit the answer length that the GPT outputs to a given question. It’s to be noted that the long-length answers that GPT produces are accurate - it’s just that having such comprehensive answers limits our ability to compare it with SQuAD dataset.
+**Challenge** One problem that we encounter while using GPT is the length of answer it outputs. This can also be seen in our example prompt towards the end of the page. We see that GPT inherently answers comprehensively to each question. However, the dataset, SQuAD has answers which are lesser in length. Thus to make a fair comparison we need to limit the answer length that the GPT outputs to a given question. It’s to be noted that the long-length answers that GPT produces are accurate - it’s just that having such comprehensive answers limits our ability to compare it with SQuAD dataset.
 
 Comparing BLUE scores with similarity scores we see that similarity gives us a better estimate. And it is more skewed towards score 1 whereas BLEU is skewed to score 0 even though the answers are accurate to a human eye and brain. This a proof of how BLEU scores are not the best metric for our dataset. We also see that when we don’t give any context the scores are strongly-skewed to 0. Without context even the similarity scores get slightly skewed which is evident from the plots.
 
@@ -485,6 +485,44 @@ The graph below shows the comparison between different N-grams where N can be 1,
  </table>
  
  
+We fine tune GPT based on the following hyper parameters:
+
+<table>
+  <tr>
+  
+    <td>GPT Hyperparameters</td>
+    <td>Scores</td>
+  </tr>
+  <tr>
+   
+    <td>entry_count</td>
+    <td>10</td>
+  </tr>
+  <tr>
+   
+    <td>entry_length</td>
+    <td>30</td>
+  </tr>
+  <tr>
+
+    <td>top_p</td>
+    <td>0.8</td>
+  </tr>
+  <tr>
+
+    <td>temperature</td>
+    <td>1</td>
+  </tr>
+ </table>
+ 
+
+
+
+
+Temperature - It is used to scale the probabilities of a given word being generated. Therefore, a high temperature forces the model to make more original predictions while a smaller one keeps the model from going off topic.
+
+Top p filtering - The model will sort the word probabilities in descending order. Then, it will sum those probabilities up to p while dropping the other words. This means the model only keeps the
+most relevant word probabilities, but does not only keep the best one, as more than one word can be appropriate given a sequence.
 
 
 
