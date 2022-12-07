@@ -370,13 +370,20 @@ As clearly visible from the above shown graphs, we got the best results with 1e-
     <td>53.67</td>
   </tr>
   <tr>
-    <td>Batch_size=16, Learning_rate=1e-6 and Number of epochs=4 using LR Sceduler</td>
+    <td>Batch_size=16, Learning_rate=1e-6 and Number of epochs=4 using LR Scheduler</td>
     <td>75.89</td>
     <td>71.91</td>
   </tr>
  </table>
  
 ### Fine-Tuning BiDAF: 
+
+We continued our efforts with BiDAF model after the midterm report. Below are the results of the model training with the most optimal hyperparamters found after performing a couple more experiements. The optimal hyperparameters values obtained are as follows:
+
+* ,ndc,nsv
+* wkbckbweikvcne
+* cwevcwevewvew
+
 <p float="left" align="middle">
  <img src="assets/Albert Losses.jpeg" width="700"/>
 </p>
