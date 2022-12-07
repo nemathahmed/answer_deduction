@@ -297,8 +297,8 @@ As clearly visible from the above shown graphs, we got the best results with 1e-
   </tr>
   <tr>
     <td>Batch_size=16, Learning_rate=1e-6 and Number of epochs=4 using LR Sceduler</td>
-    <td>78.89</td>
-    <td>76.91</td>
+    <td>75.89</td>
+    <td>71.91</td>
   </tr>
  </table>
 
