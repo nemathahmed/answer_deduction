@@ -245,7 +245,11 @@ We built a BERT-based model which returns an answer for a given question and a p
 
 #### Feature Extraction
 
-From the dataset, we consider all context and question pairs as different data samples. In order to extract the features for each sample we perform the following additional steps. First, we tokenize the context and retrieve span (start and end indices) of the word token in the context. Similarly, for all answers given we calculate the end character index and answer spans in the context tokens. For unanswerable questions, the start and end indices are set as -1. Finally, to feed into the model we have the following features: embedding indices of context tokens, embedding indices of all characters in the context tokens, embedding indices of question tokens, embedding indices of all characters in the question tokens, answers start spans’ and answer end spans’. We use pretrained GloVe embeddings to get the corresponding word vectors.
+First of all, we read both training and validation datasets and proceed with the following pre-processing steps:
+* Filter out all contexts, questions and answers from both the datasets.
+* Next, we compute the start and ending index for all the answes in each dataset. For unanswerable questions, the start and end indices are set as -1.
+* Tokenize all the contexts and questions filtered out in the step 1 and then convert the start-end positions from previous step to tokens' start-end positions.
+* Then put all the data to DataLoader, so as to split them in "pieces" of provided batch size.
  
 #### Analysis of fine tuning:
 The training on the Squad2.0 dataset is highly sensitive to the following parameters:
