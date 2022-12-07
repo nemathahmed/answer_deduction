@@ -286,7 +286,7 @@ Scores for the current fine tuned model:
  
 #### Analysis of fine tuning:
 The training is highly sensitive to the following parameters:
-* Batch size,
+* Batch size
 * Learning rate 
 * Max answer length
 
