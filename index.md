@@ -315,7 +315,7 @@ The training on the Squad2.0 dataset is highly sensitive to the following parame
 * Learning rate 
 
 
-* Concerning the *number_of_epochs* we began with 2 and realized that overfitting happened from the very first epoch. When we tried to train the model for more number of epochs, overfitting happened after the first epoch itself and the gap between the training and validation loss was getting bigger and bigger with each epoch.
+* Concerning the *number_of_epochs*, we began with 2 and realized that overfitting happened from the very first epoch. When we tried to train the model for more number of epochs, overfitting happened after the first epoch itself and the gap between the training and validation loss was getting bigger and bigger with each epoch.
 
 * For *learning_rate*, we tried 5e-5 initially but we observed overfitting, but as clearly visible increasing the batch_size improved the performance a bit (overfitting started from later epoch). Also, by using the LR Scheduler and much smaller learning_rate, we got much better results as clearly visible in the final grpah.
 
@@ -343,16 +343,24 @@ We fine tuned our model with couple of parameters:
 As clearly visible from the above shown graphs, we got the best results with 1e-6 learning_rate, 4 epochs, 16 batch_size and LR scheduler. The scores for the model can be found below:
 <table align="middle">
   <tr>
+    <td>Various Models</td>
     <td>F1 Score</td>
-    <td>54.91</td>
-  </tr>
-  <tr>
     <td>EM Score</td>
-    <td>51.79</td>
   </tr>
   <tr>
-    <td>AvNA Score</td>
-    <td>62.04</td>
+    <td>Batch_size=8, Learning_rate=5e-5 and Number of epochs=3</td>
+    <td>51.1</td>
+    <td>54.4</td>
+  </tr>
+  <tr>
+    <td>Batch_size=16, Learning_rate=5e-5 and Number of epochs=3</td>
+    <td>65.5</td>
+    <td>61.1</td>
+  </tr>
+  <tr>
+    <td>Batch_size=16, Learning_rate=1e-6 and Number of epochs=4 using LR Sceduler</td>
+    <td>78.8</td>
+    <td>76.9</td>
   </tr>
  </table>
  
