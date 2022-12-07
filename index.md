@@ -488,7 +488,7 @@ Roozbahani received his Ph.D in Computational Science and Engineering in 2019 un
 <table>
 	<tr>
 		<td> Question </td>
-		<td>**Albert v2**</td>
+		<td>Albert v2</td>
 		<td>GPT3 (w/o word limit)</td>
 		<td>BiDAF</td>
 		<td>BERT QA</td>
