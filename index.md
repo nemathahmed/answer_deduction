@@ -323,17 +323,17 @@ The training on the Squad2.0 dataset is highly sensitive to the following parame
 
 We fine tuned our model with couple of parameters:
 
-Case1: Batch_size = 8, Learning_rate = 5e-5 and Number of epochs = 3
+**Case1:** Batch_size = 8, Learning_rate = 5e-5 and Number of epochs = 3
 <p float="left" align="middle">
  <img src="assets/Bert1.jpeg" width="700"/>
 </p>
 
-Case2: Batch_size = 16, Learning_rate = 5e-5 and Number of epochs = 3
+**Case2:** Batch_size = 16, Learning_rate = 5e-5 and Number of epochs = 3
 <p float="left" align="middle">
  <img src="assets/Bert2.jpeg" width="700"/>
 </p>
 
-Case3: Batch_size = 16, Learning_rate = 1e-6 and Number of epochs = 4 and Using LR Sceduler for Learning rate decay
+**Case3:** Batch_size = 16, Learning_rate = 1e-6 and Number of epochs = 4 and Using LR Sceduler for Learning rate decay
 <p float="left" align="middle">
  <img src="assets/Bert4.jpeg" width="700"/>
 </p>
