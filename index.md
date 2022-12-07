@@ -299,14 +299,20 @@ We would further tune the BiDAF model experimenting with more combinations of hy
 </p>
  
  
-# Final Report
+# Progress Report after Midterm
 
 ## Supervised Learning
 
 ### Fine-Tuning Bert:
 
 #### Introduction
-	
+
+Bidirectional Encoder Representations from Transformers (BERT) employs masked language models to create pre-trained deep bidirectional representations. Thus, reducing the need for many heavily-engineered task-specific architectures. BERT achieves state-of-the-art performance on sentence-level and token-level tasks, outperforming other task specific architectures. We therefore choose BERT for our question answering task and fine tune it on Squad V2.0.
+
+<p float="left" align="middle">
+ <img src="assets/BERT Arch.jpeg" width="700"/>
+</p>
+
 We built a BERT-based model which returns an answer for a given question and a passage, which will also include the answer of the question. We start with the pretrained BERT-base model "bert-base-uncased" and fine-tuned it multiple times by varying paramters such as number of epochs, learning rate and batch size for the Data Locader.
 
 
@@ -371,6 +377,23 @@ As clearly visible from the above shown graphs, we got the best results with 1e-
  
 ### Fine-Tuning BiDAF: 
 
+### ALBERT: 
+A Lite BERT (ALBERT) for self - supervised learning of language representations is an extension of the BERT model with modifications to make it a lighter model. It employs two parameter reduction techniques which help lower the memory consumption as well as decrease the training time required. It uses a transformer encoder with GELU nonlinearities like BERT. Three significant design choices that are used in ALBERT are Factorized embedding parameterization, Cross-layer parameter sharing and Inter-sentence coherence loss. 
+- **Factorized embedding parameterization** - Embedding parameters are decomposed into two smaller matrices. Instead of projecting the one-hot vectors directly into the hidden space of size H, it is projected into a lower dimensional embedding space, and then projected to the hidden space. 
+- **Cross-layer parameter sharing** - the model shares all parameters across layers
+- **Inter-sentence coherence loss** - ALBERT uses a sentence-order prediction (SOP) loss which focuses on modeling inter-sentence coherence. Thus, avoids topic prediction. The SOP loss uses two consecutive segments from the same document.  For positive examples, these segments are taken in the same order and for negative examples their order is swapped. This enables the model to learn fine-grained differences.
+
+These changes enable ALBERT models to have significantly smaller parameter size as compared to the BERT models.
+
+<p float="left" align="middle">
+ <img src="assets/Albert Losses.jpeg" width="700"/>
+</p>
+
+<p float="left" align="middle">
+ <img src="assets/Albert scores.jpeg" width="700"/>
+</p>
+
+
 ## Unsupervised Learning
 
 ### GPT-3 Output Analysis - BLEU Analysis:
@@ -384,10 +407,84 @@ BLEU - BiLingual Evaluation Understudy is a score widely used in NLP to evaluate
 - **Brevity Penalty:** 
 	As the name suggests, this metric penalizes the generated translations that are too short compared to the closest target length with an exponential decay compensating for the missing recall term in the BLEU calculation 
 
-The details of the calculation can be seen in the image below.
+The details of the calculation can be seen in the image below:
+<p float="left" align="middle">
+ <img src="assets/BLEU.png" width="700"/>
+</p>
 
-- Why BLEU is bad? 
+**Why BLEU is bad? **
+
 The BLEU metric performs badly when used to evaluate individual sentences. For example, both example sentences get very low BLEU scores even though they capture most of the meaning. Because n-gram statistics for individual sentences are less meaningful, BLEU is by design a corpus-based metric; that is, statistics are accumulated over an entire corpus when computing the score. Note that the BLEU metric defined above cannot be factorized for individual sentences.
+
+#### Analysis of BLEU Metric:
+
+On evaluation for BLEU scores based on n-grams, we see that the trend is similar both across GPT scores with context and without context however there is huge difference in average similarity value. As expected we see that the 1-Gram variant of BLEU performs the best in both cases. When given context to answer a question the average BLEU (1-G) score is around 0.45 while for no context answering the average BLEU (1-G) score is around 0.109. We see that these average scores are much smaller compared to the similarity metric that we originally use with ‘text-similarity-davinci-001’. Because BLEU works on corpus it is not well suited to our case and hence using L2 Score along with ‘text-similarity-davinci-001’ is more preferred to our use case. 
+
+<table>
+  <tr>
+    <td><img src="assets/gpt_bleu_avg.png" width="400"/></td>
+    <td><img src="assets/gpt_bleu_raw_avg.png" width="400"/></td>
+  </tr>
+ </table>
+ 
+ <table>
+  <tr>
+    <td>n-Gram</td>
+    <td>Average Scores with context</td>
+    <td>Average Scores w/o context</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>0.459238</td>
+    <td>0.109498</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>0.221127</td>
+    <td>0.047953</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>0.093257</td>
+    <td>0.026187</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>0.037704</td>
+    <td>0.015227</td>
+  </tr>
+ </table>
+ 
+ 
+**The problem of answer length:** One problem that we encounter while using GPT is the length of answer it outputs. This can also be seen in our example prompt towards the end of the page. We see that GPT inherently answers comprehensively to each question. However, the dataset, SQuAD has answers which are lesser in length. Thus to make a fair comparison we need to limit the answer length that the GPT outputs to a given question. It’s to be noted that the long-length answers that GPT produces are accurate - it’s just that having such comprehensive answers limits our ability to compare it with SQuAD dataset.
+
+Comparing BLUE scores with similarity scores we see that similarity gives us a better estimate. And it is more skewed towards score 1 whereas BLEU is skewed to score 0 even though the answers are accurate to a human eye and brain. This a proof of how BLEU scores are not the best metric for our dataset. We also see that when we don’t give any context the scores are strongly-skewed to 0. Without context even the similarity scores get slightly skewed which is evident from the plots.
+
+ <table>
+  <tr>
+    <td><img src="assets/BLEU 1Gram vs Similarity score with context.png" width="400"/></td>
+    <td><img src="assets/BLEU 1Gram vs Similarity score without context.png" width="400"/></td>
+  </tr>
+ </table>
+ 
+The graph below shows the comparison between different N-grams where N can be 1, 2, 3, 4. We see that as the similarity performance reduces as the value of N increases. And the trend between BLEU and Da-vinci-similarity that we use remains the same. 
+
+ <table>
+  <tr>
+    <td><img src="assets/BLEU 2Gram vs Similarity score with context.png" width="400"/></td>
+    <td><img src="assets/BLEU 2Gram vs Similarity score without context.png" width="400"/></td>
+  </tr>
+  <tr>
+    <td><img src="assets/BLEU 3Gram vs Similarity score with context.png" width="400"/></td>
+    <td><img src="assets/BLEU 3Gram vs Similarity score without context.png" width="400"/></td>
+  </tr>
+  <tr>
+    <td><img src="assets/BLEU 4Gram vs Similarity score with context.png" width="400"/></td>
+    <td><img src="assets/BLEU 4Gram vs Similarity score without context.png" width="400"/></td>
+  </tr>
+ </table>
+ 
+ 
 
 
 
@@ -447,33 +544,6 @@ Biscuit and the previous code where Biscuit is derived are distributed with [MIT
 
 
 
-<table>
-  <tr>
-    <td>n-Gram</td>
-    <td>Average Scores with context</td>
-    <td>Average Scores w/o context</td>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>0.459238</td>
-    <td>0.109498</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>0.221127</td>
-    <td>0.047953</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>0.093257</td>
-    <td>0.026187</td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td>0.037704</td>
-    <td>0.015227</td>
-  </tr>
- </table>
  
 
 ### Given Context
@@ -488,7 +558,7 @@ Roozbahani received his Ph.D in Computational Science and Engineering in 2019 un
 <table>
 	<tr>
 		<td> Question </td>
-		<td>Albert v2</td>
+		<td>**Albert v2**</td>
 		<td>GPT3 (w/o word limit)</td>
 		<td>BiDAF</td>
 		<td>BERT QA</td>
