@@ -307,7 +307,7 @@ We would further tune the BiDAF model experimenting with more combinations of hy
 
 #### Introduction
 
-Bidirectional Encoder Representations from Transformers (BERT) employs masked language models to create pre-trained deep bidirectional representations. Thus, reducing the need for many heavily-engineered task-specific architectures. BERT achieves state-of-the-art performance on sentence-level and token-level tasks, outperforming other task specific architectures. We therefore choose BERT for our question answering task and fine tune it on Squad V2.0.
+Bidirectional Encoder Representations from Transformers (BERT) employs masked language models to create pre-trained deep bidirectional representations. Thus, reducing the need for many heavily-engineered task-specific architectures. BERT achieves state-of-the-art performance on sentence-level and token-level tasks, outperforming other task specific architectures. BERT Transformer uses bidirectional self-attention. We therefore choose BERT for our question answering task and fine tune it on Squad V2.0. 
 
 <p float="left" align="middle">
  <img src="assets/BERT Arch.jpeg" width="700"/>
