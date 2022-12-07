@@ -291,13 +291,7 @@ The calculations above are optimally computed using a few experiments until now 
  
 
 ## Further Steps
-We would further tune the BiDAF model experimenting with more combinations of hyperparameters. Going ahead we would be experimenting with relevant BERT based models for the QA task and performing comparative studies for the fine tuned models.
-
-## Progress Status
-<p float="left" align="middle">
- <img src="assets/xyz.jpeg" width="700"/>
-</p>
- 
+We would further tune the BiDAF model experimenting with more combinations of hyperparameters. Going ahead we would be experimenting with relevant BERT based models for the QA task and performing comparative studies for the fine tuned models. 
  
 # Progress Report after Midterm
 
@@ -402,7 +396,6 @@ For all the hyperparameter values that we could experiment with, we observed tha
 <p float="left" align="middle">
  <img src="assets/Albert-Test-Train.png" width="700"/>
 </p>
-
 
 ## Unsupervised Learning
 
@@ -519,10 +512,6 @@ We fine tune GPT based on the following hyper parameters:
     <td>1</td>
   </tr>
 </table>
- 
-
-
-
 
 Temperature - It is used to scale the probabilities of a given word being generated. Therefore, a high temperature forces the model to make more original predictions while a smaller one keeps the model from going off topic.
 
@@ -636,6 +625,11 @@ Below is our comparison of various supervised models' scores explored in this re
  </table>
 
 Thus, we can clearly say that the BERT QA performed better compared to all the other models based on F1 and EM scores. Though we explored GPT-3 in our report, we believe it is not fair to compare it against our supervised models as it is evaluated only on a subset of our actual dataset (500 QA pairs) due to limitations of the API calls of OpenAI. 
+
+## Progress Status
+<p float="left" align="middle">
+ <img src="assets/Gantt.jpeg" width="700"/>
+</p>
 
 
 ## References:
