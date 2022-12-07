@@ -376,13 +376,9 @@ As clearly visible from the above shown graphs, we got the best results with 1e-
   </tr>
  </table>
  
-### Fine-Tuning BiDAF: 
+### Fine-Tuning BiDAF:
 
-We continued our efforts with BiDAF model after the midterm report. Below are the results of the model training with the most optimal hyperparamters found after performing a couple more experiements. The optimal hyperparameters values obtained are as follows:
-
-* ,ndc,nsv
-* wkbckbweikvcne
-* cwevcwevewvew
+We continued our efforts with BiDAF model after the midterm report. Below are the results of the model training with the most optimal hyperparamters found after performing a couple more experiements. The plots below are for batch size = 32, learning rate =  0.3 and max answer length = 12. 
 
 <p float="left" align="middle">
  <img src="assets/Albert Losses.jpeg" width="700"/>
@@ -391,6 +387,8 @@ We continued our efforts with BiDAF model after the midterm report. Below are th
 <p float="left" align="middle">
  <img src="assets/Albert scores.jpeg" width="700"/>
 </p>
+
+As we can see from the above scores' graph, the F1 and EM scores obtained using BERT fine-tuning were far better than this BiDAF model. 
 
 ### ALBERT: 
 A Lite BERT (ALBERT) for self - supervised learning of language representations is an extension of the BERT model with modifications to make it a lighter model. It employs two parameter reduction techniques which help lower the memory consumption as well as decrease the training time required. It uses a transformer encoder with GELU nonlinearities like BERT. Three significant design choices that are used in ALBERT are Factorized embedding parameterization, Cross-layer parameter sharing and Inter-sentence coherence loss. 
